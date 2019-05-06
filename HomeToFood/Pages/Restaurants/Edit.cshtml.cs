@@ -43,6 +43,8 @@ namespace HomeToFood.Pages.Restaurants
             {
                 restaurantData.Update(Restaurant);
                 restaurantData.Commit();
+                // if valid update and redirect using anonymous method to the details page.
+                return RedirectToPage("./Detail",new { restaurantId = Restaurant.Id });
             }
 
             Cuisines = htmlHelper.GetEnumSelectList<CuisineType>();
