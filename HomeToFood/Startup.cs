@@ -32,8 +32,8 @@ namespace HomeToFood
                 options.UseSqlServer(Configuration.GetConnectionString("HomeToFoodDb"));
             });
 
-            //temp singleton
-            services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();
+            //changed from singleton to scoped
+            services.AddScoped<IRestaurantData, SqlRestaurantData>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
