@@ -8,7 +8,7 @@ namespace HomeToFood.Data
 {
     public class HomeToFoodDbContext : DbContext
     {
-        public HomeToFoodDbContext()
+        public HomeToFoodDbContext(DbContextOptions<HomeToFoodDbContext> options) : base(options)
         {
 
         }
