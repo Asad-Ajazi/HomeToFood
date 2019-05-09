@@ -51,20 +51,44 @@ namespace HomeToFood
         {
             if (env.IsDevelopment())
             {
+                // only used in development to track exceptions in the pipeline and show detailed info about it.
                 app.UseDeveloperExceptionPage();
             }
             else
             {
+                // shows user friendly error message in production.
                 app.UseExceptionHandler("/Error");
+                // only access through secure connection.
                 app.UseHsts();
             }
 
+            //custom middleware;
+            //app.Use(SayHelloMiddleWare);
+
             app.UseHttpsRedirection();
+            // static files from wwwroot folder. 
             app.UseStaticFiles();
+            // from node_modules folder.
             app.UseNodeModules(env);
             app.UseCookiePolicy();
 
             app.UseMvc();
         }
+
+        //private RequestDelegate SayHelloMiddleWare(RequestDelegate arg)
+        //{
+        //    return async ctx =>
+        //    {
+        //        if (ctx.Path.StartsWithSegments(""))
+        //        {
+        //            await ctx.Response.WriteAsync("Hello, World");
+        //        }
+        //        else
+        //        {
+        //            await NavigationExtensions()
+        //        }
+                    
+        //    };
+        //}
     }
 }
