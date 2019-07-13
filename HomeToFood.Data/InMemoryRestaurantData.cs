@@ -7,6 +7,8 @@ namespace HomeToFood.Data
 {
     public class InMemoryRestaurantData : IRestaurantData
     {
+        // This class can be swapped in from the SQL version to generate dummy data for testings purposes.
+
         List<Restaurant> restaurants;
 
         public InMemoryRestaurantData()

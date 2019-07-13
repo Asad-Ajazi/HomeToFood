@@ -6,6 +6,7 @@ namespace HomeToFood.Data
 {
     public interface IRestaurantData
     {
+        //Interface holding method signatures that classes need to implement.
         IEnumerable<Restaurant> GetRestaurantsByName(string name);
         Restaurant GetById(int id);
         Restaurant Update(Restaurant updatedRestaurant);

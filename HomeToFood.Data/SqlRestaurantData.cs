@@ -7,6 +7,8 @@ namespace HomeToFood.Data
 {
     public class SqlRestaurantData : IRestaurantData
     {
+
+
         private readonly HomeToFoodDbContext db;
 
         public SqlRestaurantData(HomeToFoodDbContext db)

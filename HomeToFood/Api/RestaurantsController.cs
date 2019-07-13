@@ -10,6 +10,8 @@ using HomeToFood.Data;
 
 namespace HomeToFood.Api
 {
+    //This class contains a simple api to query the database and return JSON formatted data.
+
     [Route("api/[controller]")]
     [ApiController]
     public class RestaurantsController : ControllerBase
